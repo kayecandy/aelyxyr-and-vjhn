@@ -1,3 +1,4 @@
+import { ViewTransition } from "react";
 import type { Viewport } from "next";
 import Link from "next/link";
 import ReserveForm from "./ReserveForm";
@@ -12,6 +13,7 @@ export const viewport: Viewport = {
 
 export default function ReservePage() {
   return (
+    <ViewTransition>
     <div className="relative flex flex-1 justify-center overflow-hidden bg-black font-(family-name:--font-cinzel) text-amber-100">
       <ParallaxBackground />
       <main
@@ -27,5 +29,6 @@ export default function ReservePage() {
         <ReserveForm />
       </main>
     </div>
+    </ViewTransition>
   );
 }

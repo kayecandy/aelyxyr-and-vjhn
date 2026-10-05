@@ -1,3 +1,4 @@
+import { ViewTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FeaturedItems from "./FeaturedItems";
@@ -6,6 +7,7 @@ import EventInfoModal from "./EventInfoModal";
 
 export default function Home() {
   return (
+    <ViewTransition>
     <div className="relative flex flex-1 justify-center overflow-hidden bg-black font-(family-name:--font-cinzel) text-amber-100">
       <ParallaxBackground
         aria-hidden
@@ -169,5 +171,6 @@ export default function Home() {
         </footer>
       </main>
     </div>
+    </ViewTransition>
   );
 }
