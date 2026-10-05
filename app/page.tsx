@@ -1,68 +1,163 @@
 import Image from "next/image";
+import Link from "next/link";
+import FeaturedItems from "./FeaturedItems";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="relative flex flex-1 justify-center overflow-hidden bg-black font-[family-name:var(--font-cinzel)] text-amber-100">
+      <div
+        aria-hidden
+        className="fixed inset-0 scale-110 blur-[2px]"
+        style={{
+          backgroundImage: "url(/bg.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <main
+        className="relative flex w-full max-w-lg flex-col gap-4 px-4 pb-0 pt-6 lg:max-w-3xl xl:max-w-4xl"
+      >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-2 bg-repeat-y"
+          style={{ backgroundImage: "url(/border.png)", backgroundSize: "100% auto" }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-2 -scale-x-100 bg-repeat-y"
+          style={{ backgroundImage: "url(/border.png)", backgroundSize: "100% auto" }}
+        />
+        <Image
+          src="/promo.jpg"
+          alt="Ælyxyr & Vjhn – The Miracle Rate: bottomless elixyrs for ₱350, Oct 1 - Nov 30 only"
+          width={764}
+          height={815}
+          priority
+          className="-mx-4 -mt-6 w-[calc(100%+2rem)] max-w-none"
+        />
+
+        <Link href="/reserve" className="block transition hover:brightness-110 active:scale-[0.99]">
+          <Image
+            src="/btn-reserve.png"
+            alt="Reserve my chalice"
+            width={730}
+            height={80}
+            className="h-auto w-full"
+          />
+        </Link>
+        <div className="grid grid-cols-2 gap-3">
+          <a href="#" className="block transition hover:brightness-110 active:scale-[0.99]">
+            <Image src="/btn-menu.png" alt="View menu" width={360} height={70} className="h-auto w-full" />
+          </a>
+          <a href="#" className="block transition hover:brightness-110 active:scale-[0.99]">
+            <Image src="/btn-event_info.png" alt="Event info" width={360} height={70} className="h-auto w-full" />
+          </a>
+        </div>
+
+        <section>
+          <Image
+            src="/title-featured_elixyrs.png"
+            alt="Featured Elixyrs – a taste of what awaits"
+            width={619}
+            height={60}
+            className="h-auto w-full"
+          />
+          <FeaturedItems
+            items={[
+              {
+                src: "/item-drink-milktea.png",
+                alt: "Nectyr of the Seraphæ – amber tea and sweet cream entwined into a nectar befitting the Seraphæ",
+              },
+              {
+                src: "/item-drink-juice.png",
+                alt: "Crimson Covenant – crimson fruits and enchanted berries swirling with violet stardust",
+              },
+              {
+                src: "/item-drink-coffee.png",
+                alt: "Noctyrnum – dark roast and velvet cream kissed by silver moonlight",
+              },
+            ]}
+          />
+        </section>
+
+        <div className="mt-4 flex flex-col items-center gap-3 pb-16 text-center text-xs tracking-widest text-amber-200/90">
+          <div>
+            <p className="text-[10px] italic tracking-[0.3em] text-amber-200/70">
+              Conjured in Alliance With
+            </p>
+            <p className="mt-1 text-2xl tracking-[0.2em] text-amber-100 drop-shadow-[0_0_8px_rgba(255,236,179,0.45)]">
+              <a
+                href="https://www.facebook.com/p/Aurora-Ball-61575189387126/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-amber-300"
+              >
+                AURORA BALL 2026
+              </a>
+            </p>
+          </div>
+          <p>
+            FERNWOOD GARDENS TAGAYTAY
+            <br />
+            <p className="text-[10px] italic tracking-[0.3em] text-amber-200/70">
+            
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://www.google.com/maps/search/?api=1&query=Fernwood+Gardens+Tagaytay"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-amber-300"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              NEOGAN, TAGAYTAY CITY, CAVITE
+            </a>
+            </p>
+          </p>
+          <br></br>
+          <div>
+            <p className="text-[10px] italic tracking-[0.3em] text-amber-200/70">
+              Brewing on
+            </p>
+            <p>DECEMBER 13, 2026</p>
+          </div>
+
+            <br />
+            <br />
+
+          <p>
+            <a href="tel:+639762841349" className="hover:text-amber-300">+63 976 284 1349</a>
+            {" · "}
+            <a href="mailto:aelyxyr.and.vjhn@gmail.com" className="hover:text-amber-300">aelyxyr.and.vjhn@gmail.com</a>
+          </p>
+
+            <br />
+            <br />
+            <br />
+
+          {/* TODO: restore social links once ready. Aurora Ball pages:
+              Instagram https://www.instagram.com/auroraball.ph/
+              Facebook  https://www.facebook.com/p/Aurora-Ball-61575189387126/
+              TikTok    https://www.tiktok.com/@aurora.ball.ph */}
+          <p className="text-[10px] text-amber-200/70">
+            MUST BE 18+ TO ATTEND. DRINK RESPONSIBLY.
+          </p>
+          <p className="text-[10px] text-amber-200/70">
+            © 2026 ÆLYXYR &amp; VJHN
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <footer className="relative -mx-4 -mb-0 -mt-16 w-[calc(100%+2rem)]">
+          <Image
+            src="/footer.png"
+            alt=""
+            width={763}
+            height={289}
+            className="h-auto w-full max-w-none"
+          />
+          <nav className="absolute inset-x-0 top-[50%] grid h-[35%] grid-cols-5">
+            {["Home", "Menu", "Pass", "Orders", "Profile"].map((l) => (
+              <a key={l} href="#" aria-label={l} />
+            ))}
+          </nav>
+        </footer>
       </main>
     </div>
   );
