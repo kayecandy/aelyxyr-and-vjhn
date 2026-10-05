@@ -30,7 +30,7 @@ OUT_DIR = ROOT / "public" / "icons"
 CACHE_FILE = ROOT / "public" / "icons" / ".image-cache.json"
 
 # Bump when the processing logic changes so cached results are rebuilt.
-SCRIPT_VERSION = 1
+SCRIPT_VERSION = 2
 
 # Per-file rules. Files not listed use "auto".
 #   auto          trim transparent margins if the image has transparency, else copy as is
@@ -45,6 +45,7 @@ RULES: dict[str, dict] = {
     "btn-bpi.png": {"mode": "clear_corners", "tolerance": 40},
     "btn-gcash.png": {"mode": "clear_corners", "tolerance": 40},
     "btn-join.png": {"mode": "clear_corners", "tolerance": 40},
+    "btn-download_qr_login.png": {"mode": "clear_corners", "tolerance": 80},
     "title-form-pass.png": {"mode": "clear_corners", "tolerance": 40},
     # Dark panels meant to sit on the form's dark background; keep as designed.
     "title-form-payment.png": {"mode": "copy"},

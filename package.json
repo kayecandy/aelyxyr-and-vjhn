@@ -10,7 +10,8 @@
     "images:setup": "python3 -m venv scripts/.venv && scripts/.venv/bin/pip install -q -r scripts/requirements.txt",
     "images": "scripts/.venv/bin/python scripts/process_images.py",
     "images:force": "scripts/.venv/bin/python scripts/process_images.py --force",
-    "images:only": "scripts/.venv/bin/python scripts/process_images.py --force"
+    "images:only": "scripts/.venv/bin/python scripts/process_images.py --force",
+    "card:preview": "scripts/.venv/bin/python scripts/card_preview.py"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",
