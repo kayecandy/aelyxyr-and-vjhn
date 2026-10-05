@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FeaturedItems from "./FeaturedItems";
 import ParallaxBackground from "./reserve/ParallaxBackground";
+import EventInfoModal from "./EventInfoModal";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       />
       <main
         className="relative flex w-full max-w-lg flex-col gap-4 px-4 pb-0 pt-6 lg:max-w-3xl xl:max-w-4xl"
+        style={{ backgroundColor: "#0b060b" }}
       >
         <div
           aria-hidden
@@ -47,12 +49,10 @@ export default function Home() {
           <a href="#" className="block transition hover:brightness-110 active:scale-[0.99]">
             <Image src="/icons/btn-menu.png" alt="View menu" width={360} height={70} className="h-auto w-full" />
           </a>
-          <a href="#" className="block transition hover:brightness-110 active:scale-[0.99]">
-            <Image src="/icons/btn-event_info.png" alt="Event info" width={360} height={70} className="h-auto w-full" />
-          </a>
+          <EventInfoModal />
         </div>
 
-        <section>
+        <section className="border-0">
           <Image
             src="/icons/title-featured_elixyrs.png"
             alt="Featured Elixyrs – a taste of what awaits"
