@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "images:setup": "python3 -m venv scripts/.venv && scripts/.venv/bin/pip install -q -r scripts/requirements.txt",
+    "images": "scripts/.venv/bin/python scripts/process_images.py",
+    "images:force": "scripts/.venv/bin/python scripts/process_images.py --force",
+    "images:only": "scripts/.venv/bin/python scripts/process_images.py --force"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",

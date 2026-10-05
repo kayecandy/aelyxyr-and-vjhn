@@ -34,6 +34,10 @@ yarn-error.log*
 .env*
 !.env.example
 
+# image pipeline
+scripts/.venv/
+assets/.image-cache.json
+
 # vercel
 .vercel
 

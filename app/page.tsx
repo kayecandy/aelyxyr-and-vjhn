@@ -1,18 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import FeaturedItems from "./FeaturedItems";
+import ParallaxBackground from "./reserve/ParallaxBackground";
 
 export default function Home() {
   return (
-    <div className="relative flex flex-1 justify-center overflow-hidden bg-black font-[family-name:var(--font-cinzel)] text-amber-100">
-      <div
+    <div className="relative flex flex-1 justify-center overflow-hidden bg-black font-(family-name:--font-cinzel) text-amber-100">
+      <ParallaxBackground
         aria-hidden
-        className="fixed inset-0 scale-110 blur-[2px]"
-        style={{
-          backgroundImage: "url(/bg.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        src="/bg.png"
+        className="fixed inset-0 scale-110"
+        style={{ filter: "blur(2px)" }}
       />
       <main
         className="relative flex w-full max-w-lg flex-col gap-4 px-4 pb-0 pt-6 lg:max-w-3xl xl:max-w-4xl"
@@ -38,7 +36,7 @@ export default function Home() {
 
         <Link href="/reserve" className="block transition hover:brightness-110 active:scale-[0.99]">
           <Image
-            src="/btn-reserve.png"
+            src="/icons/btn-reserve.png"
             alt="Reserve my chalice"
             width={730}
             height={80}
@@ -47,19 +45,19 @@ export default function Home() {
         </Link>
         <div className="grid grid-cols-2 gap-3">
           <a href="#" className="block transition hover:brightness-110 active:scale-[0.99]">
-            <Image src="/btn-menu.png" alt="View menu" width={360} height={70} className="h-auto w-full" />
+            <Image src="/icons/btn-menu.png" alt="View menu" width={360} height={70} className="h-auto w-full" />
           </a>
           <a href="#" className="block transition hover:brightness-110 active:scale-[0.99]">
-            <Image src="/btn-event_info.png" alt="Event info" width={360} height={70} className="h-auto w-full" />
+            <Image src="/icons/btn-event_info.png" alt="Event info" width={360} height={70} className="h-auto w-full" />
           </a>
         </div>
 
         <section>
           <Image
-            src="/title-featured_elixyrs.png"
+            src="/icons/title-featured_elixyrs.png"
             alt="Featured Elixyrs – a taste of what awaits"
-            width={619}
-            height={60}
+            width={1536}
+            height={223}
             className="h-auto w-full"
           />
           <FeaturedItems
@@ -81,6 +79,11 @@ export default function Home() {
         </section>
 
         <div className="mt-4 flex flex-col items-center gap-3 pb-16 text-center text-xs tracking-widest text-amber-200/90">
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
           <div>
             <p className="text-[10px] italic tracking-[0.3em] text-amber-200/70">
               Conjured in Alliance With
@@ -96,21 +99,19 @@ export default function Home() {
               </a>
             </p>
           </div>
-          <p>
-            FERNWOOD GARDENS TAGAYTAY
-            <br />
+          <div>
+            <p>FERNWOOD GARDENS TAGAYTAY</p>
             <p className="text-[10px] italic tracking-[0.3em] text-amber-200/70">
-            
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Fernwood+Gardens+Tagaytay"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-amber-300"
-            >
-              NEOGAN, TAGAYTAY CITY, CAVITE
-            </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Fernwood+Gardens+Tagaytay"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-amber-300"
+              >
+                NEOGAN, TAGAYTAY CITY, CAVITE
+              </a>
             </p>
-          </p>
+          </div>
           <br></br>
           <div>
             <p className="text-[10px] italic tracking-[0.3em] text-amber-200/70">
@@ -144,7 +145,15 @@ export default function Home() {
           </p>
         </div>
 
-        <footer className="relative -mx-4 -mb-0 -mt-16 w-[calc(100%+2rem)]">
+        <Image
+            src="/icons/footer-message.png"
+            alt="From six vessels floweth wonder."
+            width={1480}
+            height={520}
+            className="mx-auto h-auto w-[45%]"
+          />
+
+        <footer className="relative -mx-4 -mt-16 w-[calc(100%+2rem)]">
           <Image
             src="/footer.png"
             alt=""
